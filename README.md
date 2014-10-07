@@ -10,7 +10,14 @@ See also [Eurosys 2012 Summary](http://highscalability.com/blog/2012/4/30/masstr
 
 ## Installation
 
-`Pkg.clone("git://github.com/canadaduane/MassTree.jl.git")`
+In Julia:
+
+```
+julia> Pkg.clone("git://github.com/canadaduane/MassTree.jl.git")
+julia> Pkg.build("MassTree")
+```
+
+... then restart Julia
 
 ## Usage
 
