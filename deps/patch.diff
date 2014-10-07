@@ -1,0 +1,16 @@
+diff --git a/GNUmakefile.in b/GNUmakefile.in
+index 0769e64..c35f895 100644
+--- a/GNUmakefile.in
++++ b/GNUmakefile.in
+@@ -30,6 +30,11 @@ all: test_atomics mtd mtclient mttest
+ %.S: %.o
+ 	objdump -S $< > $@
+ 
++libmasstree.dylib: masstree_wrapper.o misc.o checkpoint.o query_masstree.o \
++	value_array.o value_versioned_array.o testrunner.o kvio.o log.o libjson.a
++	@/bin/rm -f $@
++	g++ -dynamiclib -undefined suppress -flat_namespace $^ -o libmasstree.dylib
++
+ libjson.a: json.o string.o straccum.o str.o msgpack.o \
+ 	clp.o kvrandom.o compiler.o kvthread.o
+ 	@/bin/rm -f $@
