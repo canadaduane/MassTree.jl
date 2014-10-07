@@ -1,0 +1,5 @@
+module MassTree
+
+# package code goes here
+
+end # module
